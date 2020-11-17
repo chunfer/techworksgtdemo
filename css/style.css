@@ -120,7 +120,7 @@ body{
     padding: 14rem 0 10rem;
     font-size: 2rem;
     font-family: 'Inter', sans-serif;
-    text-shadow: 4px 4px 3px var(--blue);
+    /* text-shadow: 4px 4px 3px var(--blue); */
     background-position: center;
 }
 

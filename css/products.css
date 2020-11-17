@@ -33,7 +33,7 @@
     margin-bottom: 0;
     font-size: 2rem;
     color: var(--orange);
-    text-shadow: 2px 2px var(--purple);
+    /* text-shadow: 2px 2px var(--purple); */
     text-transform: uppercase;
 }
 

@@ -1,5 +1,4 @@
 function closeMe()
 {
-    window.opener = self;
-    window.close();
+    open(location, '_self').close();
 }
