@@ -1,0 +1,279 @@
+html, body{
+  margin: 0;
+  padding: 0;
+  font-family: 'Lato', sans-serif;
+  background-color: black;
+}
+
+body{
+    position: relative;
+    color: white;
+}
+
+:root{
+    --dark-blue: #25232ce5;
+    --dark-blue-full: #25232c;
+    --blue: blue;
+    --red: red;
+    --purple: #69349C;
+    --white: white;
+    --orange:#FDB922;
+    --header-size: 5.3rem;
+    --black-shadow: rgba(40,40,40,0.7);
+}
+
+
+.header{
+    background-color: var(--dark-blue);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: var(--header-size);
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+}
+
+.header-image, .logo{
+    height: 100%;
+}
+
+.header-nav{
+    height: inherit;
+    margin-top:-10px;
+}
+
+.header-nav ol{
+    list-style: none;
+    display: flex;
+    height: inherit;
+    margin: 0;
+    padding-left: 0;
+}
+
+.header-nav li{
+    height: inherit;
+}
+
+
+.nav-link{
+    align-self: center;
+    color: var(--white);
+    font-size: 1.2rem;
+    padding: 0px 10px;
+    text-decoration: none;
+    font-weight: bold;
+    height: inherit;
+    display: flex;
+    align-items: center;
+}
+
+.nav-link:hover{
+    color: var(--red);
+    border-bottom: 3px solid var(--red);
+}
+
+#hamburger{
+    font-size: 1.3rem;
+    height: 2rem;
+    width: 2rem;
+    text-align: center;
+    line-height: 2rem;
+    border-radius: 50%;
+    color: white;
+    background-color: var(--black-shadow);
+    display: none;
+    position: fixed;
+    z-index: 3;
+    right: 4vw;
+}
+
+#hamburger:active{
+    color: var(--red);
+}
+
+.main-container{
+    background-color: var(--dark-blue-full);
+    display: grid;
+    padding-bottom: 20px;
+}
+
+.item{
+    width: 100%;
+    background-color: var(--dark-blue-full);
+    box-shadow: 4px 4px 4px 4px black;
+}
+
+.products-container{
+    background: url(../images/technology4-wallpaper.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: var(--dark-blue);
+    background-position: center;
+}
+
+.products-header {
+    text-align: center;
+    padding: 14rem 0 10rem;
+    font-size: 2rem;
+    font-family: 'Inter', sans-serif;
+    text-shadow: 4px 4px 3px var(--blue);
+    background-position: center;
+}
+
+.products {
+    background-image: url(../images/circle.png);
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-size: 100% 100%;
+}
+
+.product{
+    width: 22rem;
+    margin: -6.5rem 0.7rem 1rem;
+    padding: 10px;
+    height: auto;
+    border-radius: 2px;
+    background-color: var(--dark-blue-full);
+    box-shadow: 5px 5px black;
+}
+
+.product-image{
+    width: inherit;
+}
+
+.product-image img{
+    width: 100%;
+    height: 13rem;
+    object-fit: cover;
+}
+
+.product h2{
+    color: var(--purple);
+    text-shadow: 2px 2px 2px black;
+}
+
+.product-button{
+    text-align: center;
+}
+
+.product-button button{
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 0px;
+    box-shadow: 2px 2px black;
+    color: inherit;
+    background-color: inherit;
+    font-family: 'Inter', serif;
+}
+
+.product-button button:hover{
+    background-color: var(--purple);
+}
+
+.product-button button:focus{
+    border: 0;
+}
+
+.benefits-container, .mentions-container{
+    width: 98%;
+    margin: 20px auto 0px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.benefits-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.mentions-container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.benefit, .mention{
+    display: flex;
+    flex-wrap: wrap;
+    flex-flow: column;
+    align-items: center;
+    padding: 10px;
+}
+
+.benefit{
+    width: 20rem;
+}
+
+.benefit-img{
+    width: 10rem;
+}
+
+.benefit h3{
+    color: var(--orange);
+    margin-bottom: 0.3rem;
+}
+
+.benefit-img img{
+    width: 100%;
+}
+
+.mention{
+    width: 100%;
+    border-radius: 8px;
+    padding: 0;
+    overflow: hidden;
+    box-shadow: 3px 3px 3px black;
+    margin: 10px auto;
+}
+
+.mention-img, .mention-img img{
+    width: 100%;
+    height: 200px;
+}
+
+.mention-img img{
+    object-fit: cover;
+}
+
+.mention h2{
+    color: var(--red);
+    margin-bottom: 0;
+    text-shadow: 2px 2px 2px black;
+}
+
+.mention p{
+    padding: 10px;
+}
+
+.mention i{
+    color: var(--blue);
+    text-shadow: 2px 2px 2px black;
+}
+
+footer{
+    background-color: black;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    height: auto;
+}
+
+footer p{
+    text-align: center;
+}
+
+footer a{
+    text-decoration: none;
+    color: var(--purple);
+}
+
+footer a:hover{
+    color: var(--blue);
+}

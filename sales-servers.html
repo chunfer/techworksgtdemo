@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="shortcut icon" href="images/icon-Techworks.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;800&display=swap" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet"> 
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/sales.css">
+  <link rel="stylesheet" href="css/animation.css">
+  <link rel="stylesheet" href="css/sales-mobile.css">
+  <title>Techworks GT - Servidores</title>
+</head>
+<body>
+  <header class="header fadeInDown" tabindex="1">
+    <div class="header-image">
+      <img class="logo" src="images/logo-Techworks.png" alt="Brand">
+    </div>
+    <!-- <div class="header-nav">
+      <ol>
+        <li><a href="#" class="nav-link">FAQs</a></li>
+        <li><a href="products.html" class="nav-link">PRODUCTOS</a></li>
+      </ol>
+    </div>
+    <div id="hamburger">&#9776;</div> -->
+  </header>
+  <div class="main-container sales-grid">
+    <div class="sale-info">
+      <div class="sale-image">
+        <img src="images/Dell-PowerEdge.png" alt="Servidor DELL">
+      </div>
+      <h2>Mantenimiento de Servidores Empresariales</h2>
+        <p>
+          Contamos con mantenimiento de servidores de las marcas DELL y HP. 
+          Se cuenta con certificado Tier 3 y certificado como distribuidores
+          autorizados de dichas marcas.
+        </p>
+    </div>
+    <div class="sale-form">
+      <div id="smart-button-container">
+        <div style="text-align: center;">
+          <div style="margin-bottom: 1.25rem;">
+            <p>Servicio de Administración de Servidores</p>
+            <select id="item-options"><option value="Servicio mensual" price="1">Servicio mensual - 1 USD</option><option value="Servicio por 6 meses" price="6">Servicio por 6 meses - 6 USD</option><option value="Servicio anual" price="12">Servicio anual - 12 USD</option></select>
+            <select style="visibility: hidden" id="quantitySelect"></select>
+          </div>
+        <div id="paypal-button-container"></div>
+        </div>
+      </div>
+      <script src="https://www.paypal.com/sdk/js?client-id=sb&currency=USD&locale=es_GT" data-sdk-integration-source="button-factory"></script>
+      <script>
+        function initPayPalButton() {
+          var shipping = 0;
+          var itemOptions = document.querySelector("#smart-button-container #item-options");
+          var quantity = parseInt();
+          var quantitySelect = document.querySelector("#smart-button-container #quantitySelect");
+          if (!isNaN(quantity)) {
+            quantitySelect.style.visibility = "visible";
+          }
+          var orderDescription = 'Servicio de Administración de Servidores';
+          if(orderDescription === '') {
+            orderDescription = 'Item';
+          }
+          paypal.Buttons({
+            style: {
+              shape: 'rect',
+              color: 'gold',
+              layout: 'vertical',
+              label: 'buynow',
+              
+            },
+            createOrder: function(data, actions) {
+              var selectedItemDescription = itemOptions.options[itemOptions.selectedIndex].value;
+              var selectedItemPrice = parseFloat(itemOptions.options[itemOptions.selectedIndex].getAttribute("price"));
+              var tax = (12 === 0) ? 0 : (selectedItemPrice * (parseFloat(12)/100));
+              if(quantitySelect.options.length > 0) {
+                quantity = parseInt(quantitySelect.options[quantitySelect.selectedIndex].value);
+              } else {
+                quantity = 1;
+              }
+      
+              tax *= quantity;
+              tax = Math.round(tax * 100) / 100;
+              var priceTotal = quantity * selectedItemPrice + parseFloat(shipping) + tax;
+              priceTotal = Math.round(priceTotal * 100) / 100;
+              var itemTotalValue = Math.round((selectedItemPrice * quantity) * 100) / 100;
+      
+              return actions.order.create({
+                purchase_units: [{
+                  description: orderDescription,
+                  amount: {
+                    currency_code: 'USD',
+                    value: priceTotal,
+                    breakdown: {
+                      item_total: {
+                        currency_code: 'USD',
+                        value: itemTotalValue,
+                      },
+                      shipping: {
+                        currency_code: 'USD',
+                        value: shipping,
+                      },
+                      tax_total: {
+                        currency_code: 'USD',
+                        value: tax,
+                      }
+                    }
+                  },
+                  items: [{
+                    name: selectedItemDescription,
+                    unit_amount: {
+                      currency_code: 'USD',
+                      value: selectedItemPrice,
+                    },
+                    quantity: quantity
+                  }]
+                }]
+              });
+            },
+            onApprove: function(data, actions) {
+              return actions.order.capture().then(function(details) {
+                location.href = "success.html";
+                // alert('Transacción completada éxitosamente por ' + details.payer.name.given_name + '!');
+              });
+            },
+            onError: function(err) {
+              location.href = "error.html";
+              console.log(err);
+            },
+          }).render('#paypal-button-container');
+        }
+        initPayPalButton();
+      </script>
+      <br>
+      <div id="results">
+        <a href="success.html">Éxito</a>
+        <a href="error.html">Fallo</a>
+      </div>
+      <!-- <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+        <input type="hidden" name="cmd" value="_s-xclick">
+        <input type="hidden" name="hosted_button_id" value="C6YSY4RRP2SM4">
+        <input type="hidden" name="charset" value="utf-8">
+        <input type="hidden" name="city" value="Guatemala">
+        <input type="hidden" name="state" value="Guatemala">
+        <input type="hidden" name="zip" value="01016">        
+        <label id="address">Dirección<input type="text"></label>
+        <label id="name">Nombre<input type="text" name="first_name"></label>
+        <label id="last-name">Apellido<input type="text" name="last_name"></label>
+        <label id="email">E-mail<input type="email"></label>
+        <label id="phone">Teléfono<input type="tel" name="night_phone_a"></label>
+        
+        <table>
+        <tr><td><input type="hidden" name="on0" value="Tipo de pago">Seleccione servicio a pagar</td></tr><tr><td><select name="os0">
+          <option value="Servicio mensual">Servicio mensual $20.00 USD</option>
+          <option value="Servicio por 6 meses">Servicio por 6 meses $110.00 USD</option>
+          <option value="Servicio anual">Servicio anual $200.00 USD</option>
+        </select> </td></tr>
+        </table>
+        <input type="hidden" name="currency_code" value="USD">
+        <input type="submit" class="form-btn" name="submit" value="Pagar Servicios">
+      </form> -->
+    </div>
+  </div>
+  <footer class="footer">
+    <p>Sitio web hecho por: <b>Juan Fernando Montufar</b></p>
+    <p>
+      Iconos hechos por: <a href="https://www.flaticon.com/authors/freepik" title="Freepik" target="_blank">Freepik</a> 
+      desde <a href="https://www.flaticon.com/" title="Flaticon" target="_blank"> www.flaticon.com</a>
+    </p>
+  </footer>
+</body>
+</html>

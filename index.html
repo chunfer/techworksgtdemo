@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="shortcut icon" href="images/icon-Techworks.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;800&display=swap" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet"> 
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/mobile.css">
+  <link rel="stylesheet" href="css/animation.css">
+  <title>Techworks GT - Inicio</title>
+</head>
+<body>
+  <header class="header fadeInDown">
+    <div class="header-image">
+      <img class="logo" src="images/logo-Techworks.png" alt="Brand">
+    </div>
+    <div class="header-nav">
+      <ol>
+        <li><a href="faqs.html" class="nav-link">FAQs</a></li>
+        <li><a href="products.html" class="nav-link">PRODUCTOS</a></li>
+      </ol>
+    </div>
+    <div id="hamburger">&#9776;</div>
+  </header>
+  <div class="main-container">
+    <div class="item products-container">
+      <div class="products-header fadeIn">
+        <h1>LO MEJOR EN TECNOLOGÍA</h1>
+      </div>
+      <div class="products">
+        <div class="product p1 fadeInUp">
+          <div class="product-image">
+            <img src="images/Dell-PowerEdge.png" alt="Servidor DELL">
+          </div>
+          <h2>Mantenimiento de Servidores Empresariales</h2>
+          <p>Contamos con mantenimiento de servidores de las marcas DELL y HP. 
+          Se cuenta con certificado Tier 3 y certificado como distribuidores
+          autorizados de dichas marcas.</p>
+          <div class="product-button">
+            <button type="submit" onclick="openServersWindow()">Cotizar</button>
+          </div> 
+        </div>
+        <div class="product p2 fadeInUp">
+          <div class="product-image">
+            <img src="images/RASPI.png" alt="Raspberry PI">
+          </div>
+          <h2>Sistema de Monitoreo con Raspberry</h2>
+          <p>Hemos desarrollado un sistema de monitoreo empresarial 
+            capaz de realizar llamadas telefónicas, llamadas por VoIP, enviar SMS 
+            y enviar correo electrónico.</p>
+          <div class="product-button">
+            <button type="submit" onclick="openAlertgenWindow()">Cotizar</button>
+          </div> 
+        </div>
+      </div>
+    </div>
+    <div class="item benefits-container">
+      <div class="benefit">
+        <div class="benefit-img">
+          <img src="images/star.png" alt="Estrella">
+        </div>
+        <h3>Excelencia en servicio</h3>
+        <p>Garantizamos que su negocio está en buenas manos.</p>
+      </div>
+      <div class="benefit">
+        <div class="benefit-img">
+          <img src="images/guarantee.png" alt="Garantia">
+        </div>
+        <h3>Garantía de productos</h3>
+        <p>Ofrecemos como mínimo 2 años de garantía en la 
+          compra de cualquier producto nuestro.
+        </p>
+      </div>
+      <div class="benefit">
+        <div class="benefit-img">
+          <img src="images/money.png" alt="Dinero">
+        </div>
+        <h3>Productos a bajo costo</h3>
+        <p>Ofrecemos un bajo costo en relación a los equipos 
+          ya existentes dentro del mercado.</p>
+      </div>
+    </div>
+    <div class="item mentions-container">
+      <div class="mention">
+        <div class="mention-img">
+          <img src="images/person1.jpg" alt="Evelyn">
+        </div>
+        <h2>Evelyn Hernandez</h2>
+        <p>"Invertir en productos de Techworks ha sido 
+          muy satisfactorio para nuestra empresa. Tienen
+          un excelente profesionalismo en su forma de trabajo." -
+          <i>CEO de Digital Ocean</i> 
+        </p>
+      </div>
+      <div class="mention">
+        <div class="mention-img">
+          <img src="images/person2.jpg" alt="Steven">
+        </div>
+        <h2>Steven Orozco</h2>
+        <p>"Al principio dude de usar sus servicios de data center,
+          sin embargo, después del primer trabajo realizado, me quedé
+          con ellos ya que es el mejor servicio en el mercado" -
+          <i>Gerente ISERTEC</i> 
+        </p>
+      </div>
+      <div class="mention">
+        <div class="mention-img">
+          <img src="images/person3.jpg" alt="Michelle">
+        </div>
+        <h2>Michelle Peterson</h2>
+        <p>"Me parece una de las mejores inversiones que
+          hemos hecho como empresa. Realmente creo que nos han
+          ayudado bastante en temas de monitoreo dentro nuestro Data Center" -
+          <i>Gerente de IT de IBM</i> 
+        </p>
+      </div>
+      <div class="mention">
+        <div class="mention-img">
+          <img src="images/person4.jpg" alt="Andre Rodriguez">
+        </div>
+        <h2>André Rodriguez</h2>
+        <p>"Nos ha ayudado a crecer mucho como empresa. 
+          Poseen una excelente metolodogía de trabajo. Esperamos
+          poder trabajar junto a ellos por mucho tiempo" -
+          <i>Administrador de IT de Facebook</i> 
+        </p>
+      </div>
+    </div>
+    <!-- <form action=”URL_DONDE_QUIERO_ENVIAR_LO_DATOS”>
+      <label for=”nombre”>Nombre:</label>
+      <input type=”text” id=”nombre” name=”user_name” />
+    
+      <label for=“edad“>Edad:</label>
+      <input type=”number” id=”edad” name=”user_age” />
+    
+      <button type=”submit”>Enviar mis datos</button>
+    </form> -->
+  </div>
+  <footer class="footer">
+    <p>Sitio web hecho por: <b>Juan Fernando Montufar</b></p>
+    <p>
+      Iconos hechos por: <a href="https://www.flaticon.com/authors/freepik" title="Freepik" target="_blank">Freepik</a> 
+      desde <a href="https://www.flaticon.com/" title="Flaticon" target="_blank"> www.flaticon.com</a>
+    </p>
+  </footer>
+  <script src="scripts/scripts.js" charset="utf-8"></script>
+</body>
+</html>

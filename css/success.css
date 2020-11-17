@@ -1,0 +1,78 @@
+body {
+    width: 100%;
+    height: 100vh;
+    font-family: 'Big Shoulders Stencil Display', cursive;
+    overflow: hidden;
+    background-color: #000;
+    background-image: radial-gradient(circle at top right, rgba(121, 68, 154, 0.13),       transparent),
+        radial-gradient(circle at 20% 80%, rgba(41, 196, 255, 0.13), transparent)
+}
+canvas {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+#message{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    color: white;
+    text-align: center;
+}
+
+#message h1{
+    text-transform: uppercase;
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+#message p{
+    font-family: 'Poppins', sans-serif;
+}
+
+#message span{
+    position: relative;
+    z-index: 1;
+    font-weight: bold;
+    color: blue;
+    text-shadow: 2px 2px 2px black;
+}
+
+#message span:hover{
+    cursor: pointer;
+}
+
+.fadeIn{
+    -webkit-animation-duration: 4s;
+    animation-duration: 4s;
+    animation-fill-mode: both;
+    -webkit-animation-fill-mode: both;
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+}
+
+@keyframes fadeIn {
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
+
+#reference {
+    position: absolute;
+    bottom: 2vmin;
+    right: 2vmin;
+    color: rgba(255,255,255,0.2);
+    text-decoration: none;
+}
+
+#reference:hover {
+  color: #fff;
+}
