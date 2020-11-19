@@ -92,3 +92,7 @@
 .product-image img{
     height: auto;
 }
+
+.product-image:hover{
+    transform: scale(1.1);
+}
